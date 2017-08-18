@@ -1,0 +1,22 @@
+{
+  "name": "graphql-sample",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Brian Huang",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/start",
+    "lint": "eslint {src,test}",
+    "test": "nyc mocha"
+  },
+  "dependencies": {
+    "express": "^4.15.4",
+    "winston": "^2.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^4.4.1",
+    "mocha": "^3.5.0",
+    "nyc": "^11.1.0",
+    "should": "^11.2.1"
+  }
+}
