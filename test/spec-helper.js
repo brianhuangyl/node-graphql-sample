@@ -1,1 +1,1 @@
-require('should');
+import 'should';

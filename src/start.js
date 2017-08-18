@@ -1,5 +1,6 @@
-const logger = require('./logger');
-const express = require('express');
+import logger from './logger';
+import express from 'express';
+
 const app = express();
 const host = process.env.HOSTNAME || '0.0.0.0';
 const port = process.env.PORT || 8000;
