@@ -5,13 +5,20 @@
   "author": "Brian Huang",
   "license": "MIT",
   "scripts": {
+    "db-version": "node scripts/db.js version",
+    "db-migrate": "node scripts/db.js migrate",
+    "db-rollback": "node scripts/db.js rollback",
+    "db-migration": "node scripts/db.js migration",
+    "db-seed": "node scripts/db.js seed",
     "start": "babel-node src/start",
     "lint": "eslint {src,test}",
     "test": "nyc mocha"
   },
   "dependencies": {
     "express": "^4.15.4",
+    "faker": "^4.1.0",
     "knex": "^0.13.0",
+    "mysql": "^2.14.1",
     "winston": "^2.3.1"
   },
   "devDependencies": {
