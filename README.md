@@ -1,27 +1,18 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+This is a NodeJS graphql service allowing CRUD operations with mysql as database.
 
 ### What is this repository for? ###
 
-GraphQl sample
+Node GraphQl Sample
 
 ### How do I get set up? ###
 
 * Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
+  `yarn install`
 * How to run tests
+  `yarn test`
 * Deployment instructions
 
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+## TODO
+* Add request validation

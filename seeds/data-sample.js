@@ -5,7 +5,7 @@ module.exports.seed = async db => {
   const products = Array.from({ length: 10 }).map(() => ({
     price: faker.commerce.price(),
     name: faker.commerce.productName(),
-    description: faker.lorem.text(),
+    description: faker.lorem.sentence(),
     image_url: faker.internet.avatar()
   }));
 

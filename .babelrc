@@ -8,5 +8,11 @@
         }
       }
     ]
-  ]
+  ],
+  "plugins": [
+    "transform-class-properties",
+    "transform-export-extensions",
+    "transform-flow-strip-types",
+    "transform-object-rest-spread"
+  ],
 }
