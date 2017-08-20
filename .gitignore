@@ -2,3 +2,4 @@ yarn.lock
 coverage
 node_modules
 .nyc_output
+.env

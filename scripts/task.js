@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 function run(task, action, ...args) {
   const command = process.argv[2];
   const taskName =
