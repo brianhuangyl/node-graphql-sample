@@ -10,9 +10,10 @@
     "db-rollback": "node scripts/db.js rollback",
     "db-migration": "node scripts/db.js migration",
     "db-seed": "node scripts/db.js seed",
-    "start": "babel-node src/start",
-    "lint": "eslint {src,test}",
-    "test": "nyc mocha"
+    "start": "./node_modules/.bin/babel-node src/start",
+    "lint": "./node_modules/.bin/eslint {src,test}",
+    "test": "nyc mocha",
+    "docker-test": "nyc mocha"
   },
   "dependencies": {
     "body-parser": "^1.17.2",

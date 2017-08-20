@@ -1,0 +1,31 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:8.0
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: mypassword
+      MYSQL_DATABASE: graphql_sample
+      MYSQL_USER: graphql_user
+      MYSQL_PASSWORD: graphql_password
+    restart: always
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on: [mysql]
+    links:
+      - mysql
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./output:/app/output
+    environment:
+      HOSTNAME: 0.0.0.0
+      PORT: 4000
+      DB_HOST: 127.0.0.1
+      DB_USER: graphql_user
+      DB_PASSWORD: graphql_password
+      DB_NAME: graphql_sample
+    command: yarn db-migrate && yarn start
