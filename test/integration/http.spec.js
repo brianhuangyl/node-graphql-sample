@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import request from 'supertest-as-promised';
 import { stringify } from 'querystring';
-import faker from 'faker'
+import factory from '../fixtures/factory';
 const server = require(`${SRC}/server`).default;
 
 function urlString(urlParams?: ?{[param: string]: mixed}) {
@@ -23,13 +23,11 @@ describe('Http requests', () => {
   });
 
   function buildFakeProduct() {
-    return {
-      price: 100,
-      name: faker.commerce.productName(),
-      description: faker.lorem.sentence(),
-      imageUrl: faker.internet.avatar()
-    }
+    const product = factory.generateOne('product');
+    product.price = parseFloat(product.price);
+    return product;
   }
+
   function buildInputString({price, name, description, imageUrl}) {
     return `price: ${price}  name: "${name}"  description: "${description}" imageUrl: "${imageUrl}"`
   }
