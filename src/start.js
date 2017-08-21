@@ -1,4 +1,3 @@
-require('dotenv').config();
 import server from './server';
 import logger from './logger';
 

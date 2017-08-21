@@ -1,31 +1,26 @@
 version: '3'
 services:
-  mysql:
+  db:
     image: mysql:8.0
-    ports:
-      - 3306:3306
+    container_name: mysql-graphql
     environment:
       MYSQL_ROOT_PASSWORD: mypassword
       MYSQL_DATABASE: graphql_sample
       MYSQL_USER: graphql_user
       MYSQL_PASSWORD: graphql_password
-    restart: always
   app:
+    container_name: node-graphql
     build:
       context: .
       dockerfile: Dockerfile
-    depends_on: [mysql]
+    depends_on: [db]
     links:
-      - mysql
+      - db
     ports:
-      - "4000:4000"
-    volumes:
-      - ./output:/app/output
+      - 4000:4000
     environment:
-      HOSTNAME: 0.0.0.0
-      PORT: 4000
-      DB_HOST: 127.0.0.1
+      DB_HOST: db
       DB_USER: graphql_user
       DB_PASSWORD: graphql_password
       DB_NAME: graphql_sample
-    command: yarn db-migrate && yarn start
+    command: ["/bin/sh", "-c", "./scripts/wait-for db:3306 -- sleep 10;yarn db-migrate;yarn start"]
