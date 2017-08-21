@@ -12,7 +12,7 @@
     "db-seed": "node scripts/db.js seed",
     "start": "./node_modules/.bin/babel-node src/start",
     "lint": "./node_modules/.bin/eslint {src,test}",
-    "test": "nyc mocha",
+    "test": "nyc mocha test/unit",
     "test-integration": "nyc mocha test/integration",
     "docker-test": "./scripts/docker-test"
   },
