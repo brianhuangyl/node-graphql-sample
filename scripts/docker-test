@@ -1,0 +1,4 @@
+#!/bin/sh
+
+docker build -t graphql-demo .
+docker run -it graphql-demo yarn test
